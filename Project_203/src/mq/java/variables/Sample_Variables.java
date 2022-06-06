@@ -3,7 +3,7 @@ package mq.java.variables;
 public class Sample_Variables 
 {
 	int a=100;
-	String name="ma";
+	String name="mq";
 	
 	void method1()
 	{
