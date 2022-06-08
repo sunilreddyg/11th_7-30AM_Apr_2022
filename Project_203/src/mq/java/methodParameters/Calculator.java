@@ -2,7 +2,7 @@ package mq.java.methodParameters;
 
 public class Calculator 
 {
-	int a;
+	int a;    //Global variables
 	int b;
 	
 	public Calculator(int var1, int var2) 
