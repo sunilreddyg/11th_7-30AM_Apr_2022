@@ -38,6 +38,9 @@ public class Launch_Chrome_Browser
 		//Loading a webpage to automation browser window
 		chrome.get("https://facebook.com");
 		
+		//maximize browser window
+		chrome.manage().window().maximize();
+		
 		//Printing Current Window title
 		System.out.println(chrome.getTitle());
 		
