@@ -6,15 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class Verify_Dropdown_is_Multiple_Selection_Type 
-{
+public class Selecting_multiple_Dropdown_Options {
 
-	public static void main(String[] args) throws Exception 
-	{
-		
-		
-		
-		
+	public static void main(String[] args) throws Exception {
 		
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\MINDQ\\Desktop\\recent_drivers\\chromedriver.exe");
 		WebDriver driver=new ChromeDriver();    				//Open ChromeBrowser
@@ -25,16 +19,27 @@ public class Verify_Dropdown_is_Multiple_Selection_Type
 		SelectMenuLink.click();
 		Thread.sleep(3000);
 		
-		WebElement Dropdown1=driver.findElement(By.id("exampleFormControlSelect1"));
-		boolean flag1=new Select(Dropdown1).isMultiple();
-		System.out.println("Dropdown Multiple selection status is --> "+flag1);
+		//Get Dropdown Status Single Option or Multiple option type
+		WebElement Country=driver.findElement(By.id("exampleFormControlSelect2"));
+		boolean flag=new Select(Country).isMultiple();
 		
 		
-		WebElement Dropdown2=driver.findElement(By.id("exampleFormControlSelect2"));
-		boolean flag2=new Select(Dropdown2).isMultiple();
-		System.out.println("Dropdown Multiple selection status is --> "+flag2);
+		if (flag) 
+		{
+			Select CountrySelector=new Select(Country);
+			CountrySelector.deselectAll();
+			CountrySelector.selectByIndex(1);
+			CountrySelector.selectByIndex(3);
+			
+			//Deselcting any single option from dropdown
+			CountrySelector.deselectByIndex(1);
+			
+		} else 
+		{
+			System.out.println("Dropdown is  not multiple type");
+		}
 		
-
+		
 		
 	}
 
