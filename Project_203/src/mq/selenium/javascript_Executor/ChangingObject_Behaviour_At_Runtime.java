@@ -6,9 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ChangingObject_Behaviour_At_Runtime {
+public class ChangingObject_Behaviour_At_Runtime 
+{
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception
+	{
 		
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\MINDQ\\Desktop\\recent_drivers\\chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
@@ -30,6 +32,25 @@ public class ChangingObject_Behaviour_At_Runtime {
 		//Get Object to Visible using javascript
 		js.executeScript("arguments[0].style.visibility='visible'", Email);
 		Thread.sleep(2000);
+		
+		//Disable Object using javascript
+		js.executeScript("arguments[0].disabled=true", Email);
+		Thread.sleep(4000);
+		
+		//Enable Object using javascript
+		js.executeScript("arguments[0].disabled=false", Email);
+		Thread.sleep(4000);
+		
+		//Set Readonly property to editbox
+		js.executeScript("arguments[0].setAttribute('readonly','readonly')", Email);
+		Thread.sleep(4000);
+		
+		
+		//Set Readonly property to editbox
+		js.executeScript("arguments[0].removeAttribute('readonly','readonly')", Email);
+		Thread.sleep(4000);
+		
+		
 		
 		
 	}
