@@ -28,7 +28,7 @@ public class Global_initiation
 		String name = null;
 		if(flag)
 		{
-			name="Webdriver";
+			 name="Webdriver";
 		}
 		System.out.println(name);
 		
